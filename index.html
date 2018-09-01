@@ -3,14 +3,16 @@
   <head>
     <meta charset="utf-8">
     <style media="screen">
-    li {
-      color: red
-      border: 1px solid blue;
-    }
-      div a{
+      #big-bunky {
+        background-color: orange
+      }
+      #exec-bio {
+        background-color: lightgray;
+      }
+      .bio-box a {
         color: green
       }
-      div {
+      .bio-box {
         border: 1px solid black;
       }
     </style>
@@ -19,21 +21,24 @@
   <body>
     <h1>I'm an h1</h1>
     <ul>
+      <div id="big-bunky">
       <li><a href="http://example.com">link</a>
     </li>
+      </div>
       <li><a href="http://example.com">link</a>
     </li>
       <li><a href="http://example.com">link</a>
     </li>
     </ul>
+
     <h2>I'm an h2</h2>
-    <div>
+    <div id="exec-bio" class="bio-box">
       <a href="http://example.com">"I'm a link </a>
     </div>
-    <div>
+    <div class="bio-box">
       <a href="http://example.com">"I'm a link </a>
     </div>
-    <div>
+    <div class="bio-box">
       <a href="http://example.com">"I'm a link </a>
     </div>
   </body>
