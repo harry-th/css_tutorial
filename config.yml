@@ -1,0 +1,6 @@
+# Site Settings
+Title: Test Site
+baseurl: /
+url: http://harry-th.github.io
+post_layout: post
+page_layout: page

@@ -340,8 +340,21 @@ h4 {
 .half-hero {
   background-position: center center;
   background-size: cover;
-  height: 40vh
+  height: 40vh;
 }
+.mobile-menu-check,
+.show-mobile-menu {
+  display: none;
+}
+.nav-links a,
+.drop-trigger,
+.show-mobile-menu {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 @media (max-width: 800px) {
 html {
   box-shadow: none;
@@ -385,8 +398,65 @@ html {
   font-size: 1.3rem;
   width: auto;
 }
+/* MOBILE MENU*/
+.show-mobile-menu {
+  display: block;
+  float: right;
+  margin-top: 1.5vh;
+  padding: 1.5em;
+  position: relative;
+  }
+.header-nav {
+  background-color: #444;
+  box-sizing: border-box;
+  left: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 8vh;
+  transition: all 0.5s ease-in-out;
+  width: 100vw;
+  z-index: 9;
 }
+.header-nav li {
+  display: block;
+  margin-top: 1em;
+}
+.header-nav li ~ li {
+  border: 0;
+  padding: 0;
+}
+.header-nav li:last-child {
+  margin-bottom: 1em;
+}
+.header-nav li:first-child a {
+  color: #fff;
+}
+/*HIDE DROPDOWN IN THE NAV MENU*/
+.header-nav .dropdown:hover .drop-menu,
+.header-nav .drop-trigger:after {
+  display: none;
+}
+.header-nav .drop-trigger {
+  padding-right: 0;
+}
+.mobile-menu-check:checked ~ .header-nav {
+  max-height: 1000px;
 
+}
+.mobile-menu-check:checked ~ .show-mobile-menu:after {
+  background-color: #000;
+  color: #ed6e2f;
+  content: "CLOSE";
+  left: 0;
+  position: absolute;
+  top: 1.5em;
+  width: 100%;
+  text-align: center;
+}
+}
 .home-section h2 {
   margin-bottom: 1.5rem;
   text-align: center;
@@ -401,4 +471,83 @@ html {
 .home-section .blog-posts {
   margin: auto;
   width: 75%;
+}
+
+.header-nav a,
+.drop-trigger {
+  color: #fff;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown:hover .drop-menu {
+  border-color: #ed6e2f transparent transparent;
+}
+.drop-trigger {
+  display: inline-block;
+  padding-right: 1.5em;
+  position: relative;
+}
+.drop-trigger:after {
+  border: 0.3em solid;
+  border-color: #fff transparent transparent;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0.3em;
+  width: 0;
+}
+.drop-menu {
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  display: none;
+  list-style: none;
+  padding: 1em 0 0;
+  position: absolute;
+  right: 0;
+  z-index: 9;
+}
+.drop-menu:before {
+  border: 0.6em solid;
+  border-color: transparent transparent #fff;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 1em;
+  top: -0.1em;
+  width: 0;
+}
+.drop-menu li {
+  color: black;
+  background-color: #fff;
+}
+.drop-menu li ~ li {
+  border-top: 1px dotted rgba(0,0,0,0.1)
+}
+.drop-menu li:first-child {
+  border-radius: 5px 5px 0 0;
+  color: #999;
+  font-size: 0.5em;
+  padding: 1em 1em 0.25em;
+  text-align: right;
+  text-transform: uppercase;
+}
+.drop-menu a {
+  color: #333;
+  display: block;
+  font-weight: normal;
+  padding: 0.5em 2em 0.5em 1em;
+  text-align: left;
+  text-transform: none;
+  white-space: nowrap;
+}
+.dropdown:hover .drop-menu {
+  display: block;
+}
+.footer .dropdown:hover .drop-menu,
+.footer .drop-trigger:after {
+  display: none;
+}
+.footer .drop-trigger {
+  padding-right: 0;
 }
